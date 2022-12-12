@@ -1,6 +1,6 @@
 # Ce que j'ai appris à partir de DB browser
 
-## Commandes de base
+## Commandes basiques
 
 ### Créer une table :
 
@@ -54,6 +54,12 @@ Donc pour n'afficher que certaines colonnes :
 
 ![table plus fournie](assets/20221209_093701_image.png)
 
+
+
+#### Filtrage basique
+
+
+
 On peut formuler des requêtes encore plus précises avec WHERE. Là où SELECT sélectionne les attributs, WHERE filtre les *valeurs*.
 
 Donc pour filtrer :
@@ -65,8 +71,34 @@ Donc pour filtrer :
 `SELECT nom, base FROM DISTRIBUTIONS WHERE base='Debian'` renverra :
 
 
-
 |   | id | nom     | base   |
 | --- | ---- | --------- | -------- |
 | 1 | 1  | Xandros | Debian |
 | 2 | 2  | Ubuntu  | Debian |
+
+> moralité : Nous avons une table qui contient des données à elle toute-seule. Jusqu'ici on n'a fait qu'un tableau, en fin de compte. Maintenant passons à une base de données contenant *plusieurs* tables *reliées* entre elles.
+>
+> Pour ça, on ne va pas se contenter de clés primaires, on va utiliser des clés étrangères ("FOREIGN").
+
+---
+
+
+
+
+
+
+## Jointures
+
+
+
+Selon la documentation officielle d'SLQ :
+
+> ## Syntaxe
+>
+> Pour utiliser ce type de jointure il convient d’utiliser une requête SQL avec cette syntaxe :
+>
+> ```
+> SELECT *
+> FROM table1
+> INNER JOIN table2 ON table1.id = table2.fk_id
+> ```
