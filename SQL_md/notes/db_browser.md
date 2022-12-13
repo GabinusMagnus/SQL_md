@@ -10,14 +10,6 @@ CREATE TABLE NOM_DE_TABLE (id INT, attributs, PRIMARY KEY (id))
 
 `CREATE TABLE DISTRIBUTIONS (id INT, nom TEXT, base TEXT, dernière_maj INT, gestionnaire de paquets TEXT, version FLOAT, PRIMARY KEY (id))`
 
- 
-
- 
-
- 
-
- 
-
 ### Entrer des valeurs dans la table:
 
 En fait, on entre des ensembles d'attributs.
@@ -80,22 +72,28 @@ Donc pour filtrer :
 | 1 | 1  | Xandros | Debian |
 | 2 | 2  | Ubuntu  | Debian |
 
-> moralité : Nous avons une table qui contient des données à elle toute-seule. Jusqu'ici on n'a fait qu'un tableau, en fin de compte. Maintenant passons à une base de données contenant *plusieurs* tables *reliées* entre elles.
+> moralité : Nous avons une table qui contient des données à elle toute-seule. Jusqu'ici on n'a fait qu'un tableau, en fin de compte. Maintenant passons à une base de données contenant *plusieurs* tables *jointes*.
 >
 > Pour ça, on ne va pas se contenter de clés primaires, on va utiliser des clés étrangères ("FOREIGN").
 
 ---
 
-## Jointures
+## Jointure Interne
 
 Selon la documentation officielle d'SLQ :
 
-> ## Syntaxe
+> ## *Syntaxe*
 >
-> Pour utiliser ce type de jointure il convient d’utiliser une requête SQL avec cette syntaxe :
+> *Pour utiliser ce type de jointure il convient d’utiliser une requête SQL avec cette syntaxe :*
 >
-> ```
-> SELECT *
-> FROM table1
-> INNER JOIN table2 ON table1.id = table2.fk_id
-> ```
+> `SELECT * FROM table1 INNER JOIN table2 ON table1.id = table2.fk_id`
+
+`INNER JOIN table2 ON table1.id = table2.fk_id`
+
+
+| INNER                   | JOIN    | table 2                                     | ON  | table1.id               | = | table2.fk_id                                                            |
+| :------------------------ | --------- | --------------------------------------------- | ----- | ------------------------- | --- | ------------------------------------------------------------------------- |
+| Intérieurement/interne | joindre | la table dont on veut renvoyer les données | sur | l'attribut id de table1 | = | l'attribut id qui est une clé étrangère (fk = foreign key) de table2 |
+
+
+Syntaxe surprenante mais logique. id de table1 sera joint à id de table2. Une nouvelle table sera renvoyée, avec les valeurs voulue.
