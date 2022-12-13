@@ -10,6 +10,14 @@ CREATE TABLE NOM_DE_TABLE (id INT, attributs, PRIMARY KEY (id))
 
 `CREATE TABLE DISTRIBUTIONS (id INT, nom TEXT, base TEXT, dernière_maj INT, gestionnaire de paquets TEXT, version FLOAT, PRIMARY KEY (id))`
 
+ 
+
+ 
+
+ 
+
+ 
+
 ### Entrer des valeurs dans la table:
 
 En fait, on entre des ensembles d'attributs.
@@ -54,11 +62,7 @@ Donc pour n'afficher que certaines colonnes :
 
 ![table plus fournie](assets/20221209_093701_image.png)
 
-
-
 #### Filtrage basique
-
-
 
 On peut formuler des requêtes encore plus précises avec WHERE. Là où SELECT sélectionne les attributs, WHERE filtre les *valeurs*.
 
@@ -82,14 +86,7 @@ Donc pour filtrer :
 
 ---
 
-
-
-
-
-
 ## Jointures
-
-
 
 Selon la documentation officielle d'SLQ :
 
