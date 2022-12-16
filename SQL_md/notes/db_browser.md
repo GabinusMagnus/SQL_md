@@ -95,7 +95,7 @@ Selon la documentation officielle d'SLQ :
 | :------------------------ | --------- | --------------------------------------------- | ----- | ------------------------- | --- | ------------------------------------------------------------------------- |
 | Intérieurement/interne | joindre | la table dont on veut renvoyer les données | sur | l'attribut id de table1 | = | l'attribut id qui est une clé étrangère (fk = foreign key) de table2 |
 
-Syntaxe surprenante mais logique. id de table1 sera joint à id de table2. Une nouvelle table sera renvoyée, avec les valeurs voulue.
+Surprenant mais logique. id de table1 sera joint à id de table2. Une nouvelle table sera renvoyée, avec les valeurs voulue.
 
 ## Vocabulaire
 
